@@ -30,20 +30,25 @@ repositories {
 ext {
 	set('netflixDgsVersion', "11.0.0")
 	set('springCloudVersion', "2025.1.0")
+	set('unboundidScimVersion', "5.0.0")
 }
 
 dependencies {
+	// 
+	implementation "com.unboundid.product.scim2:scim2-sdk-server:${unboundidScimVersion}" // https://central.sonatype.com/artifact/com.unboundid.product.scim2/scim2-sdk-server
+	//
 	implementation 'org.springframework.boot:spring-boot-micrometer-tracing-brave'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-graphql'
-	implementation 'org.springframework.boot:spring-boot-starter-liquibase'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	// implementation 'org.springframework.boot:spring-boot-starter-liquibase'
 	implementation 'org.springframework.boot:spring-boot-starter-opentelemetry'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 	implementation 'com.netflix.graphql.dgs:graphql-dgs-spring-graphql-starter'
 	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
-	implementation 'net.ttddyy.observation:datasource-micrometer-spring-boot:2.0.1'
+	// implementation 'net.ttddyy.observation:datasource-micrometer-spring-boot:2.0.1'
 	implementation 'org.springframework.cloud:spring-cloud-stream'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
